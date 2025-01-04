@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Data Collection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Patient Data Collection Form</h1>
+        <form id="patientForm" action="/getresults" method="POST">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="gender" value="female" required> Female
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="male" required> Male
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required min="1" max="120">
+            </div>
+
+            <div class="form-group">
+                <label for="tc">Total Cholesterol (TC):</label>
+                <input type="number" id="tc" name="tc" required min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="hdl">HDL (High-Density Lipoprotein):</label>
+                <input type="number" id="hdl" name="hdl" required min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="sbp">Systolic Blood Pressure (SBP):</label>
+                <input type="number" id="sbp" name="sbp" required min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="smoke">Smoking Status:</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="smoke" value="0" required> No Smoking
+                    </label>
+                    <label>
+                        <input type="radio" name="smoke" value="1" required> Smoking
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="bpmed">Blood Pressure Medication (BPMED):</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="bpmed" value="0" required> Not Taking
+                    </label>
+                    <label>
+                        <input type="radio" name="bpmed" value="1" required> Taking
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="diab">Diabetes (DIAB_noyes):</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="diab" value="0" required> No
+                    </label>
+                    <label>
+                        <input type="radio" name="diab" value="1" required> Yes
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html
